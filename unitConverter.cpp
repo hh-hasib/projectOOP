@@ -12,6 +12,20 @@
 #include "weight.h"
 using namespace std;
 
+void displayPreviousConversions() {
+    ifstream inputFile("previous_conversions.txt");
+    if (inputFile.is_open()) {
+        cout << "Previous Conversion Results:" << endl;
+        string line;
+        while (getline(inputFile, line)) {
+            cout << line << endl;
+        }
+        inputFile.close();
+    } else {
+        cout << "No previous conversion results found." << endl;
+    }
+}
+
 int main()
 {
     int choice;
@@ -29,7 +43,8 @@ int main()
         cout << "3. Temperature Converter" << endl;
         cout << "4. Volume Converter" << endl;
         cout << "5. Weight Converter" << endl;
-        cout << "6. Exit" << endl;
+        cout << "6. See previous convertions" << endl;
+        cout << "7. Exit" << endl;
         cout << "Enter your choice: ";
         cin >> choice;
 
@@ -53,6 +68,9 @@ int main()
             converter = new WeightConverter();
             break;
         case 6:
+            displayPreviousConversions();
+            break;
+        case 7:
             cout << "Exiting the program..." << endl;
             break;
         default:
@@ -69,7 +87,7 @@ int main()
         cout << "Press enter to continue...";
         cin.ignore();
         cin.get();
-    } while (choice != 6);
+    } while (choice != 7);
 
     return 0;
 }
