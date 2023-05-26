@@ -4,16 +4,18 @@
 #include <math.h>
 #include <cstdlib>
 #include <stdlib.h>
-#include "Class.h"
-#include "length.h"
-#include "volume.h"
-#include "area.h"
-#include "temp.h"
-#include "weight.h"
+#include "Class.h"        //This a header file to attach class.h file to it
+#include "length.h"       //This a header file to attach length.h file to it
+#include "volume.h"       //This a header file to attach volume.h file to it
+#include "area.h"         //This a header file to attach area.h file to it
+#include "temp.h"         //This a header file to attach temp.h file to it
+#include "weight.h"       //This a header file to attach weight.h file to it
 using namespace std;
 
+//Display previous conversions from saved conversions(File Handling)
+
 void displayPreviousConversions() {
-    ifstream inputFile("previous_conversions.txt");
+    ifstream inputFile("previous_conversions.txt");         //Opening input file
     if (inputFile.is_open()) {
         cout << "Previous Conversion Results:" << endl;
         string line;
@@ -32,7 +34,7 @@ int main()
 
     do
     {
-        system("cls");
+        system("cls");          //clear screen
         cout << "  ==============================================================================\n";
         cout << "||\t\t\tWELCOME TO UNIT CONVERSION APPLICATION\t\t\t||\n";
         cout << "  ==============================================================================\n";
@@ -81,11 +83,11 @@ int main()
         if (converter != nullptr)
         {
             converter->convert();
-            delete converter;
+            delete converter;           //deleting converter
         }
 
         cout << "Press enter to continue...";
-        cin.ignore();
+        cin.ignore();       //ignoring the enter key
         cin.get();
     } while (choice != 7);
 

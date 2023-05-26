@@ -3,6 +3,9 @@
 
 using namespace std;
 
+//This is a class for area converter. It has inherited from the Converter class.
+//It takes a double type value and convert it to the desired temperature.
+
 class TemperatureConverter : public Converter
 {
 public:
