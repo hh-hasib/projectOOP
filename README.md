@@ -49,6 +49,8 @@ Units:
 - Celsius
 - Farenheit
 The user can convert from any of the above units to the other as per his choice.
+#### 6. See Previous Conversions:
+All the conversions are saved in a text file.The user can see the previous conversion he has done through this option.
 ## OOP features used for implementation:
 - Class
 - Nested function
